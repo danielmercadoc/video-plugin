@@ -215,7 +215,7 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
     [self handleGestures];
     
     [moviePlayer setPlayer:movie];
-    [moviePlayer setShowsPlaybackControls:YES];
+    [moviePlayer setShowsPlaybackControls:nil];
     [moviePlayer setUpdatesNowPlayingInfoCenter:YES];
     
     if(@available(iOS 11.0, *)) { [moviePlayer setEntersFullScreenWhenPlaybackBegins:YES]; }
