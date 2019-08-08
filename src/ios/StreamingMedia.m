@@ -221,6 +221,9 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
     if(@available(iOS 11.0, *)) { [moviePlayer setEntersFullScreenWhenPlaybackBegins:YES]; }
     
     // present modally so we get a close button
+    [self.viewController presentViewController:moviePlayer animated:YES completion:^(void){
+        [moviePlayer.player play];
+    }];
     
     
     // add audio image and background color
@@ -331,11 +334,17 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
 
 - (void) appDidBecomeActive:(NSNotification*)notification {
     NSLog(@"appDidBecomeActive");
+
+    
     
     if (moviePlayer && movie && videoType == TYPE_AUDIO)
     {
         NSLog(@"did reinstate playerlayer");
         [moviePlayer setPlayer:movie];
+    }
+    if (moviePlayer && movie)
+    {
+        [moviePlayer.player play];
     }
 }
 
