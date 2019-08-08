@@ -53,6 +53,8 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
         initFullscreen = YES;
     }
     
+    requiresLinearPlayback = true;
+    
     if ([type isEqualToString:TYPE_AUDIO]) {
         videoType = TYPE_AUDIO;
         
