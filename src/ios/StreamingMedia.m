@@ -216,7 +216,6 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
     
     [moviePlayer setPlayer:movie];
     [moviePlayer setShowsPlaybackControls:YES];
-    [moviePlayer setRequiresLinearPlayback:true];
     [moviePlayer setUpdatesNowPlayingInfoCenter:YES];
     
     if(@available(iOS 11.0, *)) { [moviePlayer setEntersFullScreenWhenPlaybackBegins:YES]; }
