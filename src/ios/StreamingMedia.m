@@ -13,6 +13,7 @@
 - (UIImage*)getImage: (NSString *)imageName;
 - (void)startPlayer:(NSString*)uri;
 - (void)moviePlayBackDidFinish:(NSNotification*)notification;
+- (void)cleanup;
 @end
 
 @implementation StreamingMedia {
