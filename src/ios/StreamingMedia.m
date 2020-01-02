@@ -325,6 +325,9 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
 - (void) appDidEnterBackground:(NSNotification*)notification {
     NSLog(@"appDidEnterBackground");
     
+    NSLog(@"did set player layer to nil");
+    [moviePlayer setPlayer: nil];
+    
 
 }
 
