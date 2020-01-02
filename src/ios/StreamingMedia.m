@@ -339,7 +339,7 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
     
     if (moviePlayer && movie)
     {
-        [moviePlayer.player play];
+        [moviePlayer.player pause];
     }
 }
 
