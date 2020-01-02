@@ -308,6 +308,9 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
         if ([recognizer isKindOfClass:[UISwipeGestureRecognizer class]]) {
             [contentView removeGestureRecognizer:recognizer];
         }
+        if ([recognizer isKindOfClass:[UIPinchGestureRecognizer class]]) {
+            [contentView removeGestureRecognizer:recognizer];
+        }
     }
 }
 
