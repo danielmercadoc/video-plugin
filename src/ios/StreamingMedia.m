@@ -394,7 +394,7 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
      object:nil];
     
     if (moviePlayer) {
-        [moviePlayer.player stop];
+        [moviePlayer.player pause];
         [moviePlayer dismissViewControllerAnimated:YES completion:nil];
         moviePlayer = nil;
     }
