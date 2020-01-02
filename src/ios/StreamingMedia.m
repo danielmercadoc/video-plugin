@@ -290,7 +290,24 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
     for (UIGestureRecognizer *recognizer in contentView.gestureRecognizers) {
         NSLog(@"gesture loop ");
         NSLog(@"%@", recognizer);
-        [contentView removeGestureRecognizer:recognizer];
+        if ([recognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+            [contentView removeGestureRecognizer:recognizer];
+        }
+        if ([recognizer isKindOfClass:[UIPinchGestureRecognizer class]]) {
+            [contentView removeGestureRecognizer:recognizer];
+        }
+        if ([recognizer isKindOfClass:[UIRotationGestureRecognizer class]]) {
+            [contentView removeGestureRecognizer:recognizer];
+        }
+        if ([recognizer isKindOfClass:[UILongPressGestureRecognizer class]]) {
+            [contentView removeGestureRecognizer:recognizer];
+        }
+        if ([recognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+            [contentView removeGestureRecognizer:recognizer];
+        }
+        if ([recognizer isKindOfClass:[UISwipeGestureRecognizer class]]) {
+            [contentView removeGestureRecognizer:recognizer];
+        }
     }
 }
 
@@ -308,11 +325,7 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
 - (void) appDidEnterBackground:(NSNotification*)notification {
     NSLog(@"appDidEnterBackground");
     
-    if (moviePlayer && movie && videoType == TYPE_AUDIO)
-    {
-        NSLog(@"did set player layer to nil");
-        [moviePlayer setPlayer: nil];
-    }
+
 }
 
 - (void) appDidBecomeActive:(NSNotification*)notification {
@@ -320,11 +333,7 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
 
     
     
-    if (moviePlayer && movie && videoType == TYPE_AUDIO)
-    {
-        NSLog(@"did reinstate playerlayer");
-        [moviePlayer setPlayer:movie];
-    }
+    
     if (moviePlayer && movie)
     {
         [moviePlayer.player play];
