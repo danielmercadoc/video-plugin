@@ -290,24 +290,7 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
     for (UIGestureRecognizer *recognizer in contentView.gestureRecognizers) {
         NSLog(@"gesture loop ");
         NSLog(@"%@", recognizer);
-        if ([recognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-            [contentView removeGestureRecognizer:recognizer];
-        }
-        if ([recognizer isKindOfClass:[UIPinchGestureRecognizer class]]) {
-            [contentView removeGestureRecognizer:recognizer];
-        }
-        if ([recognizer isKindOfClass:[UIRotationGestureRecognizer class]]) {
-            [contentView removeGestureRecognizer:recognizer];
-        }
-        if ([recognizer isKindOfClass:[UILongPressGestureRecognizer class]]) {
-            [contentView removeGestureRecognizer:recognizer];
-        }
-        if ([recognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
-            [contentView removeGestureRecognizer:recognizer];
-        }
-        if ([recognizer isKindOfClass:[UISwipeGestureRecognizer class]]) {
-            [contentView removeGestureRecognizer:recognizer];
-        }
+        [contentView removeGestureRecognizer:recognizer];
     }
 }
 
