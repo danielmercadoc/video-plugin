@@ -217,6 +217,7 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
     [moviePlayer setPlayer:movie];
     [moviePlayer setShowsPlaybackControls:YES];
     [moviePlayer setUpdatesNowPlayingInfoCenter:YES];
+    [moviePlayer setAllowsPictureInPicturePlayback:NO];
     
     if(@available(iOS 11.0, *)) { [moviePlayer setEntersFullScreenWhenPlaybackBegins:YES]; }
     
@@ -308,9 +309,6 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
         if ([recognizer isKindOfClass:[UISwipeGestureRecognizer class]]) {
             [contentView removeGestureRecognizer:recognizer];
         }
-        if ([recognizer isKindOfClass:[UIPinchGestureRecognizer class]]) {
-            [contentView removeGestureRecognizer:recognizer];
-        }
     }
 }
 
@@ -330,6 +328,7 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
     
     NSLog(@"did set player layer to nil");
     [moviePlayer.player pause];
+    [self cleanup];
     
 
 }
@@ -343,6 +342,7 @@ NSString * const DEFAULT_IMAGE_SCALE = @"center";
     if (moviePlayer && movie)
     {
         [moviePlayer.player pause];
+        [self cleanup];
     }
 }
 
